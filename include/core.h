@@ -13,4 +13,6 @@
 /// of the color frame.
 /// The output have to be the point_cloud colorized , the image rectified ans the depth relative to the color frame (ie the z component of the pcl in that frame)
 
-std::tuple<pcl::PointCloud<pcl::PointXYZRGB>::Ptr,cv::Mat3b,cv::Mat1d> colorize_rectify(pcl::PointCloud<pcl::PointXYZRGB> cloud_in,cv::Mat3b color_in, Eigen::Affine3d transform);
+std::tuple<pcl::PointCloud<pcl::PointXYZRGB>::Ptr,cv::Mat3b,cv::Mat1d> colorize_rectify(pcl::PointCloud<pcl::PointXYZRGB> cloud_in,
+                                                                                            cv::Mat3b color_in, 
+                                                                                            Eigen::Affine3d transform);
