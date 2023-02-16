@@ -26,12 +26,15 @@ class RosRGBDRect
     ros::Publisher rect_cloud_pub_;
     ros::Publisher rect_info_pub_;
     sensor_msgs::CameraInfo cam_info_; 
+    tf::TransformListener listener_;
     pcl::PointCloud<pcl::PointXYZRGB> cloud_in_; 
     pcl::PointCloud<pcl::PointXYZRGB> cloud_out_;
     cv::Mat3b image_in_;
     cv::Mat1f intrinsicsK_in_;
     cv::Mat1f intrinsicsD_in_;
-    cv::Mat3b image_out_;
+    sensor_msgs::Image image_out_;
+    sensor_msgs::Image depth_out_;
+    sensor_msgs::CameraInfo info_out_;
     cv::Mat1f intrinsics_out_;
     public: 
     RosRGBDRect(ros::NodeHandle nh,std::string cam_info_topic, std::string cloud_topic,std::string cam_image_topic);
@@ -68,6 +71,7 @@ void RosRGBDRect::cam_image_callback(const sensor_msgs::Image::ConstPtr& msg)
 
 void RosRGBDRect::cam_info_callback(const sensor_msgs::CameraInfo::ConstPtr& info)
 {
+    cam_info_ = *info;
     cv::Mat intrK(3,3,CV_64FC1,(void*) info.K.data());
     cv::Mat intrD(5,1,CV_64FC1);
     if(info.D.size())
@@ -88,6 +92,21 @@ void RosRGBDRect::cloud_callback(const sensor_msgs::PointCloud::ConstPtr& msg)
 {
     pcl::fromROSMsg(*msg,cloud_in_);
     cloud_in_.header = msg->header; 
+    tf::Transform transform;
+    try{
+        listener_.lookupTransform(cloud_in_.header.frame_id,cam_info_.header.frame_id
+                                  ros::Time(0), transform);
+    }
+    catch (tf::TransformException &ex) 
+    {
+        ROS_ERROR("%s",ex.what());
+        ros::Duration(0.5).sleep();
+        continue;
+    } 
+    Eigen::Affine3d e; 
+    tf::transformTFToEigen(transform,e); 
+    auto result = colorize_rectify(cloud_in_,image_in_,e,intrinsicsK_in_,intrinsicsD_in_);
+    sensor_msgs::Image
     //next task : 
     //* add tf listener to atributes 
     // lookup the transform with exception handling 
