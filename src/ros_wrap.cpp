@@ -59,13 +59,19 @@ void RosRGBDRect::cloud_callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
         ROS_ERROR("%s",ex.what());
         ros::Duration(0.5).sleep();
     } 
-    Eigen::Affine3d e; 
-    tf::transformTFToEigen(transform,e); 
-    auto result = colorize_rectify(cloud_in_,image_in_,e,intrinsicsK_in_,intrinsicsD_in_);
-    sensor_msgs::Image 
-    //next task : 
-    //* add tf listener to atributes 
-    // lookup the transform with exception handling 
-    //convert the transform to eigen (see doc : http://docs.ros.org/en/kinetic/api/tf_conversions/html/c++/tf__eigen_8h.html) 
-    // use the core functions
+    Eigen::Affine3d t_eigen; 
+    tf2::Stamped<Eigen::Affine3d> t_in; //to do : initialize this to zero transform
+    tf2::doTransform(t_in,t_in,transformStamped); 
+    t_eigen.affine() = t_in.affine();
+    t_eigen.linear() = t_in.linear();
+    auto result = colorize_rectify(cloud_in_,image_in_,t_eigen,intrinsicsK_in_,intrinsicsD_in_);
+    cloud_out_ = std::get<pcl::PointCloud<pcl::PointXYZRGB>::Ptr>(result);
+    image_out_ = *cv_bridge::CvImage(cam_info_.header,sensor_msgs::image_encodings::BGR8,std::get<cv::Mat3b>(result)).toImageMsg();
+    depth_out_ = *cv_bridge::CvImage(cam_info_.header,sensor_msgs::image_encodings::TYPE_64FC1,std::get<cv::Mat1d>(result)).toImageMsg();
+    info_out_ = cam_info_ ;
+    rect_cloud_pub_.publish(cloud_out_);
+    rect_color_pub_.publish(image_out_);
+    rect_depth_pub_.publish(depth_out_);
+    rect_info_pub_.publish(info_out_);
+    return ;
 }

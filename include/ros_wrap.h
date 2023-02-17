@@ -29,7 +29,7 @@ class RosRGBDRect
     tf2_ros::Buffer tfBuffer_; 
     tf2_ros::TransformListener tfListener_;
     pcl::PointCloud<pcl::PointXYZRGB> cloud_in_; 
-    pcl::PointCloud<pcl::PointXYZRGB> cloud_out_;
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_out_;
     cv::Mat3b image_in_;
     cv::Mat1f intrinsicsK_in_;
     cv::Mat1f intrinsicsD_in_;
