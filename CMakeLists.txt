@@ -2,32 +2,24 @@ cmake_minimum_required(VERSION 3.0.2)
 project(depth_colorizer)
 add_compile_options(-std=c++14 -Wall)
 set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS "-lboost_program_options")
 
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   roscpp
   sensor_msgs
   std_msgs
+  cv_bridge
   tf
   tf2
   tf2_ros
 )
 find_package(OpenCV REQUIRED)
-find_package(Boost COMPONENTS program_options REQUIRED)
+find_package(Boost)
 find_package(PCL REQUIRED)
 find_package(Eigen3)
 
 add_definitions(${PCL_DEFINITIONS})
-
-
-generate_messages(
-   DEPENDENCIES
-   sensor_msgs   
-   std_msgs
-   geometry_msgs
- )
-
-
 
 catkin_package(
   INCLUDE_DIRS include
@@ -48,11 +40,14 @@ include_directories(
   ${EIGEN_INCLUDE_DIRS}
 )
 
-add_executable(${PROJECT_NAME}_node )
+add_executable(${PROJECT_NAME}_node src/core.cpp src/ros_wrap.cpp src/depth_colorizer_node.cpp)
 
 target_link_libraries(${PROJECT_NAME}_node
    ${catkin_LIBRARIES}
    ${PCL_LIBRARIES}
+   ${OpenCV_LIBRARIES}
+   ${EIGEN3_LIBRARIES}
+  ${Boost_LIBRARIES}
  )
 
 #############

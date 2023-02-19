@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -lboost_program_options -g  -shared -Wl,-soname,libgtest_maind.so -o ../lib/libgtest_maind.so CMakeFiles/gtest_main.dir/src/gtest_main.cc.o  -Wl,-rpath,/home/aubin/my_ws/src/depth_colorizer/build/gtest/lib ../lib/libgtestd.so -lpthread 

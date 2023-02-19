@@ -5,11 +5,11 @@ nh_(nh),
 tfBuffer_(),
 tfListener_(tfBuffer_)
 {
-    cam_info_sub_ = nh.subscribe(cam_info_topic,1,cam_info_callback,this);
-    cam_image_sub_ = nh.subscribe(cam_image_topic,1,cam_image_callback,this);
-    cloud_sub_ = nh.subscribe(cloud_topic,1,cloud_callback,this);
+    cam_info_sub_ = nh.subscribe(cam_info_topic,1,&RosRGBDRect::cam_info_callback,this);
+    cam_image_sub_ = nh.subscribe(cam_image_topic,1,&RosRGBDRect::cam_image_callback,this);
+    cloud_sub_ = nh.subscribe(cloud_topic,1,&RosRGBDRect::cloud_callback,this);
     rect_color_pub_ = nh.advertise<sensor_msgs::Image>("rect/image",1,true);
-    rect_cloud_pub_ = nh.advertise<sensor_msgs::PointCloud>("rect/cloud",1,true);
+    rect_cloud_pub_ = nh.advertise<sensor_msgs::PointCloud2>("rect/cloud",1,true);
     rect_info_pub_ = nh.advertise<sensor_msgs::CameraInfo>("rect/info",1,true); 
     rect_depth_pub_ = nh.advertise<sensor_msgs::Image>("rect/depth",1,true); 
 }
@@ -69,9 +69,10 @@ void RosRGBDRect::cloud_callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
     image_out_ = *cv_bridge::CvImage(cam_info_.header,sensor_msgs::image_encodings::BGR8,std::get<cv::Mat3b>(result)).toImageMsg();
     depth_out_ = *cv_bridge::CvImage(cam_info_.header,sensor_msgs::image_encodings::TYPE_64FC1,std::get<cv::Mat1d>(result)).toImageMsg();
     info_out_ = cam_info_ ;
-    rect_cloud_pub_.publish(cloud_out_);
+    sensor_msgs::PointCloud2 cloud_out2;
+    pcl::toROSMsg<pcl::PointXYZRGB>(*cloud_out_,cloud_out2);
+    rect_cloud_pub_.publish(cloud_out2);
     rect_color_pub_.publish(image_out_);
     rect_depth_pub_.publish(depth_out_);
     rect_info_pub_.publish(info_out_);
-    return ;
 }

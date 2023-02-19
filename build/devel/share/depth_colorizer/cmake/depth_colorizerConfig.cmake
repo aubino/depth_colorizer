@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(depth_colorizer_EXPORTED_TARGETS "depth_colorizer_generate_messages_cpp;depth_colorizer_generate_messages_eus;depth_colorizer_generate_messages_lisp;depth_colorizer_generate_messages_nodejs;depth_colorizer_generate_messages_py")
+set(depth_colorizer_EXPORTED_TARGETS "")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${depth_colorizer_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   _list_append_deduplicate(depth_colorizer_EXPORTED_TARGETS ${${depth_colorizer_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "depth_colorizer-msg-extras.cmake")
+set(pkg_cfg_extras "")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${depth_colorizer_DIR}/${extra})

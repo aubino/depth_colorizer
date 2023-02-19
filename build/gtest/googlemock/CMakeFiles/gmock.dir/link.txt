@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -lboost_program_options -g  -shared -Wl,-soname,libgmockd.so -o ../lib/libgmockd.so CMakeFiles/gmock.dir/src/gmock-all.cc.o  -Wl,-rpath,/home/aubin/my_ws/src/depth_colorizer/build/gtest/lib ../lib/libgtestd.so -lpthread 
