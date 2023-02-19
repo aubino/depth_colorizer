@@ -9,7 +9,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv,"depth_colorizer");
     ros::NodeHandle nh;
     std::string cam_info_topic,cloud_topic,cam_image_topic,yaml_file;
-    /*po::options_description desc("Mandatory options");
+    po::options_description desc("Mandatory options");
     desc.add_options ()
     ("help,h","This node is used to send cartesian commands to the robot arm. Allowed options are : ")
     ("info,i",po::value(&cam_info_topic),"Te topic on which the program will find camera infos. Mandatory option")
@@ -45,7 +45,7 @@ int main(int argc, char** argv)
             exit (EXIT_FAILURE);
         }
     }
-    */
+    
     RosRGBDRect rectifier(nh,cam_info_topic,cloud_topic,cam_image_topic);
     ros::spin();
 }
