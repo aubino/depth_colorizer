@@ -14,14 +14,14 @@ jobs:
     steps:
     - name : Update And Upgrade
       run  : sudo apt update && sudo apt upgrade
-    # - name : Install Eigen3
-      # run : sudo apt install libeigen3-dev
-    # - name : Install Opencv4
-      # run : sudo apt install libopencv-dev
-    # - name : Install Boost 
-      # run : sudo apt-get install libboost-all-dev
-    # - name : Install CMake 
-      # run : sudo apt install cmake
+    - name : Install Eigen3
+      run : sudo apt install libeigen3-dev
+    - name : Install Opencv4
+      run : sudo apt install libopencv-dev
+    - name : Install Boost 
+      run : sudo apt-get install libboost-all-dev
+    - name : Install CMake 
+      run : sudo apt install cmake
     - uses: actions/checkout@v3
       with:
         path : 'depth_colorizer'
