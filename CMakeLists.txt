@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.0.2)
 project(depth_colorizer)
 add_compile_options(-std=c++14 -Wall)
 set(CMAKE_BUILD_TYPE Debug)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_PREFIX_PATH})
+
+# Verify
+message(STATUS "CMAKE_MODULE_PATH=${CMAKE_MODULE_PATH}")
 
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
