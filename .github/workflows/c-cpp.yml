@@ -28,7 +28,7 @@ jobs:
     - name : Install ROS
       run : cd ${GITHUB_WORKSPACE}/depth_colorizer/ && chmod +x install_ros.sh && ./install_ros.sh && sudo apt update && sudo apt upgrade
     - name : Install Rosdeps 
-      run :  cd ${GITHUB_WORKSPACE}/depth_colorizer/ && chmod+x  install_rosdeps.sh && ./install_rosdeps.sh && sudo apt update && sudo apt upgrade
+      run :  cd ${GITHUB_WORKSPACE}/depth_colorizer/ && chmod +x  install_rosdeps.sh && ./install_rosdeps.sh && sudo apt update && sudo apt upgrade
     - name : Build 
       run : cd ${GITHUB_WORKSPACE}/depth_colorizer/ && mkdir build && cd build && cmake .. && make 
 

@@ -18,14 +18,6 @@ echo ""
 version=`lsb_release -sc`
 relesenum=`grep DISTRIB_DESCRIPTION /etc/*-release | awk -F 'Ubuntu ' '{print $2}' | awk -F ' LTS' '{print $1}'`
 echo ">>> {Your Ubuntu version is: [Ubuntu $version $relesenum]}"
-#Checking version is focal, if yes proceed othervice quit
-case $version in
-  "focal" )
-  ;;
-  *)
-    echo ">>> {ERROR: This script will only work on Ubuntu Focal (20.04).}"
-    exit 0
-esac
 
 echo ""
 echo ">>> {Ubuntu Focal 20.04 is fully compatible with Ubuntu Focal 20.04}"
