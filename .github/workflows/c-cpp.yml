@@ -30,8 +30,7 @@ jobs:
     - name : Install Rosdeps 
       run :  cd ${GITHUB_WORKSPACE}/depth_colorizer/ && chmod +x  install_rosdeps.sh && ./install_rosdeps.sh && sudo apt update && sudo apt upgrade
     - name : Build 
-      run : cd ${GITHUB_WORKSPACE}/depth_colorizer/ && mkdir build && cd build && cmake .. && make 
-
+      run : mkdir ${GITHUB_WORKSPACE}/catkin_ws/src/depth_colorizer &&  cp -r ${GITHUB_WORKSPACE}/depth_colorizer/  ${GITHUB_WORKSPACE}/catkin_ws/src/depth_colorizer && cd ${GITHUB_WORKSPACE}/catkin_ws/ && catkin build
     # - uses: ros-tooling/action-ros-ci@v0.3
       # with:
         # package-name: depth_colorizer
