@@ -67,8 +67,8 @@ set(depth_colorizer_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(depth_colorizer_SOURCE_PREFIX /home/aubin/my_ws/src/depth_colorizer)
-  set(depth_colorizer_DEVEL_PREFIX /home/aubin/my_ws/src/depth_colorizer/build/devel)
+  set(depth_colorizer_SOURCE_PREFIX /home/aubin/depth_colorizer)
+  set(depth_colorizer_DEVEL_PREFIX /home/aubin/depth_colorizer/build/devel)
   set(depth_colorizer_INSTALL_PREFIX "")
   set(depth_colorizer_PREFIX ${depth_colorizer_DEVEL_PREFIX})
 else()
@@ -116,7 +116,7 @@ if(NOT "include " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "depth_colorizer")
+set(libraries "object_identificator")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -185,7 +185,7 @@ foreach(t ${depth_colorizer_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;roscpp;sensor_msgs;std_msgs;tf;tf2;tf2_ros")
+set(depends "cv_bridge;pcl_ros;roscpp;sensor_msgs;std_msgs;tf2;tf2_ros")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

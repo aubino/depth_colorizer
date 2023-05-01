@@ -7,9 +7,8 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/aubin/my_ws/src/depth_colorizer/build/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH='/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/lib:/home/aubin/my_ws/src/depth_colorizer/build/devel/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/lib:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/lib:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/lib'
-export PATH='/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/noetic/bin:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/bin:/home/aubin/.cargo/bin:/home/aubin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
-export PKG_CONFIG_PATH="/home/aubin/my_ws/src/depth_colorizer/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/home/aubin/my_ws/src/depth_colorizer/build/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/aubin/my_ws/src/depth_colorizer:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/aubin/depth_colorizer/build/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH='/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/lib:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/lib'
+export PATH='/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/noetic/bin:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/bin:/opt/ros/noetic/share/euslisp/jskeus/eus//Linux64/bin:/home/aubin/.cargo/bin:/home/aubin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/aubin/depth_colorizer/build/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/aubin/depth_colorizer:$ROS_PACKAGE_PATH"

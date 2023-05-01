@@ -62,15 +62,23 @@ pcl_conversions/pcl_conversions.h
 tf/transform_datatypes.h
 ../include/tf/transform_datatypes.h
 
-/home/aubin/my_ws/src/depth_colorizer/src/depth_colorizer_node.cpp
+/home/aubin/depth_colorizer/src/core.cpp
+core.h
+/home/aubin/depth_colorizer/src/core.h
+
+/home/aubin/depth_colorizer/src/depth_colorizer_node.cpp
 iostream
 -
 ros_wrap.h
-/home/aubin/my_ws/src/depth_colorizer/src/ros_wrap.h
+/home/aubin/depth_colorizer/src/ros_wrap.h
 string
 -
 boost/program_options.hpp
 -
+
+/home/aubin/depth_colorizer/src/ros_wrap.cpp
+ros_wrap.h
+/home/aubin/depth_colorizer/src/ros_wrap.h
 
 /opt/ros/noetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/aubin/my_ws/src/depth_colorizer/build/devel/setup.sh
+    local-name: /home/aubin/depth_colorizer/build/devel/setup.sh

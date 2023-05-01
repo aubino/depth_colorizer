@@ -67,8 +67,8 @@ set(depth_colorizer_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(depth_colorizer_SOURCE_PREFIX /home/aubin/my_ws/src/depth_colorizer)
-  set(depth_colorizer_DEVEL_PREFIX /home/aubin/my_ws/src/depth_colorizer/build/devel)
+  set(depth_colorizer_SOURCE_PREFIX /home/aubin/depth_colorizer)
+  set(depth_colorizer_DEVEL_PREFIX /home/aubin/depth_colorizer/build/devel)
   set(depth_colorizer_INSTALL_PREFIX "")
   set(depth_colorizer_PREFIX ${depth_colorizer_DEVEL_PREFIX})
 else()
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(depth_colorizer_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/aubin/my_ws/src/depth_colorizer/include " STREQUAL " ")
+if(NOT "/home/aubin/depth_colorizer/include " STREQUAL " ")
   set(depth_colorizer_INCLUDE_DIRS "")
-  set(_include_dirs "/home/aubin/my_ws/src/depth_colorizer/include")
+  set(_include_dirs "/home/aubin/depth_colorizer/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,13 +110,13 @@ if(NOT "/home/aubin/my_ws/src/depth_colorizer/include " STREQUAL " ")
         message(FATAL_ERROR "Project 'depth_colorizer' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'depth_colorizer' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/aubin/my_ws/src/depth_colorizer/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'depth_colorizer' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/aubin/depth_colorizer/${idir}'.  ${_report}")
     endif()
     _list_append_unique(depth_colorizer_INCLUDE_DIRS ${include})
   endforeach()
 endif()
 
-set(libraries "depth_colorizer")
+set(libraries "object_identificator")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/aubin/my_ws/src/depth_colorizer/build/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/aubin/depth_colorizer/build/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -185,7 +185,7 @@ foreach(t ${depth_colorizer_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;roscpp;sensor_msgs;std_msgs;tf;tf2;tf2_ros")
+set(depends "cv_bridge;pcl_ros;roscpp;sensor_msgs;std_msgs;tf2;tf2_ros")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

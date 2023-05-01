@@ -17,7 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(PCL REQUIRED)
 find_package(Eigen3)
 find_package(OpenCV REQUIRED)
-find_package(Boost COMPONENTS system program_options REQUIRED)
+find_package(Boost REQUIRED system program_options )
 
 catkin_package(
   INCLUDE_DIRS include

@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/aubin/my_ws/src/depth_colorizer/src/core.cpp" "/home/aubin/my_ws/src/depth_colorizer/build/CMakeFiles/depth_colorizer_node.dir/src/core.cpp.o"
-  "/home/aubin/my_ws/src/depth_colorizer/src/depth_colorizer_node.cpp" "/home/aubin/my_ws/src/depth_colorizer/build/CMakeFiles/depth_colorizer_node.dir/src/depth_colorizer_node.cpp.o"
-  "/home/aubin/my_ws/src/depth_colorizer/src/ros_wrap.cpp" "/home/aubin/my_ws/src/depth_colorizer/build/CMakeFiles/depth_colorizer_node.dir/src/ros_wrap.cpp.o"
+  "/home/aubin/depth_colorizer/src/core.cpp" "/home/aubin/depth_colorizer/build/CMakeFiles/depth_colorizer_node.dir/src/core.cpp.o"
+  "/home/aubin/depth_colorizer/src/depth_colorizer_node.cpp" "/home/aubin/depth_colorizer/build/CMakeFiles/depth_colorizer_node.dir/src/depth_colorizer_node.cpp.o"
+  "/home/aubin/depth_colorizer/src/ros_wrap.cpp" "/home/aubin/depth_colorizer/build/CMakeFiles/depth_colorizer_node.dir/src/ros_wrap.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -31,8 +31,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/vtk-7.1"
   "/usr/include/freetype2"
   "/usr/include/opencv4"
-  "/usr/include/pcl-1.10"
   "/usr/include/eigen3"
+  "/usr/include/pcl-1.10"
   "/usr/include/ni"
   "/usr/include/openni2"
   )

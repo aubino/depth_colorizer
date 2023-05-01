@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aubin/my_ws/src/depth_colorizer
+CMAKE_SOURCE_DIR = /home/aubin/depth_colorizer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aubin/my_ws/src/depth_colorizer/build
+CMAKE_BINARY_DIR = /home/aubin/depth_colorizer/build
 
 # Utility rule file for actionlib_msgs_generate_messages_eus.
 
@@ -67,6 +67,6 @@ CMakeFiles/actionlib_msgs_generate_messages_eus.dir/clean:
 .PHONY : CMakeFiles/actionlib_msgs_generate_messages_eus.dir/clean
 
 CMakeFiles/actionlib_msgs_generate_messages_eus.dir/depend:
-	cd /home/aubin/my_ws/src/depth_colorizer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aubin/my_ws/src/depth_colorizer /home/aubin/my_ws/src/depth_colorizer /home/aubin/my_ws/src/depth_colorizer/build /home/aubin/my_ws/src/depth_colorizer/build /home/aubin/my_ws/src/depth_colorizer/build/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/aubin/depth_colorizer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aubin/depth_colorizer /home/aubin/depth_colorizer /home/aubin/depth_colorizer/build /home/aubin/depth_colorizer/build /home/aubin/depth_colorizer/build/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/actionlib_msgs_generate_messages_eus.dir/depend
 

@@ -1,8 +1,8 @@
-prefix=/home/aubin/my_ws/src/depth_colorizer/build/devel
+prefix=/home/aubin/depth_colorizer/build/devel
 
 Name: depth_colorizer
 Description: Description of depth_colorizer
 Version: 0.0.0
-Cflags: -I/home/aubin/my_ws/src/depth_colorizer/include
-Libs: -L${prefix}/lib -ldepth_colorizer
-Requires: geometry_msgs roscpp sensor_msgs std_msgs tf tf2 tf2_ros
+Cflags: -I/home/aubin/depth_colorizer/include
+Libs: -L${prefix}/lib -lobject_identificator
+Requires: cv_bridge pcl_ros roscpp sensor_msgs std_msgs tf2 tf2_ros

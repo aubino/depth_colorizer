@@ -3,7 +3,7 @@
 
 CMakeFiles/depth_colorizer_node.dir/src/core.cpp.o
  ../include/core.h
- /home/aubin/my_ws/src/depth_colorizer/src/core.cpp
+ /home/aubin/depth_colorizer/src/core.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense
@@ -247,7 +247,7 @@ CMakeFiles/depth_colorizer_node.dir/src/core.cpp.o
 CMakeFiles/depth_colorizer_node.dir/src/depth_colorizer_node.cpp.o
  ../include/core.h
  ../include/ros_wrap.h
- /home/aubin/my_ws/src/depth_colorizer/src/depth_colorizer_node.cpp
+ /home/aubin/depth_colorizer/src/depth_colorizer_node.cpp
  /opt/ros/noetic/include/cv_bridge/cv_bridge.h
  /opt/ros/noetic/include/geometry_msgs/Point.h
  /opt/ros/noetic/include/geometry_msgs/Point32.h
@@ -763,7 +763,7 @@ CMakeFiles/depth_colorizer_node.dir/src/depth_colorizer_node.cpp.o
 CMakeFiles/depth_colorizer_node.dir/src/ros_wrap.cpp.o
  ../include/core.h
  ../include/ros_wrap.h
- /home/aubin/my_ws/src/depth_colorizer/src/ros_wrap.cpp
+ /home/aubin/depth_colorizer/src/ros_wrap.cpp
  /opt/ros/noetic/include/cv_bridge/cv_bridge.h
  /opt/ros/noetic/include/geometry_msgs/Point.h
  /opt/ros/noetic/include/geometry_msgs/Point32.h
