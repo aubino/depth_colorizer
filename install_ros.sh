@@ -130,8 +130,9 @@ echo "##########################################################################
 echo ">>> {Step 6: Setting ROS Environment, This will add ROS environment to .bashrc.}" 
 echo ">>> { After adding this, you can able to access ROS commands in terminal}"
 echo ""
-echo "source /opt/ros/noetic/setup.bash" >> /home/$user_name/.bashrc
-source /home/$user_name/.bashrc
+#echo "source /opt/ros/noetic/setup.bash" >> /home/$user_name/.bashrc
+#source /home/$user_name/.bashrc
+source /opt/ros/noetic/setup.bash
 sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 sudo rosdep init
 rosdep update
