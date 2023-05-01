@@ -22,16 +22,13 @@ jobs:
       run : sudo apt-get install libboost-all-dev
     - name : Install CMake 
       run : sudo apt install cmake
-    - uses: ros-tooling/setup-ros@v0.6
-      with:
-        required-ros-distributions: noetic
-    - name : Install PCL
-      run :  sudo apt install libpcl-dev
     - uses: actions/checkout@v3
       with:
         path : 'depth_colorizer'
+    - name : Install ROS
+      run : chmod +x ${GITHUB_WORKSPACE}/depth_colorizer/install_ros.sh && ./${GITHUB_WORKSPACE}/depth_colorizer/install_ros.sh && sudo apt update && sudo apt upgrade
     - name : Install Rosdeps 
-      run : chmod+x ${GITHUB_WORKSPACE}/depth_colorizer/install_rosdeps.sh && ./${GITHUB_WORKSPACE}/depth_colorizer/install_rosdeps.sh
+      run : chmod+x ${GITHUB_WORKSPACE}/depth_colorizer/install_rosdeps.sh && ./${GITHUB_WORKSPACE}/depth_colorizer/install_rosdeps.sh && sudo apt update && sudo apt upgrade
     - name : Build 
       run : cd ${GITHUB_WORKSPACE}/depth_colorizer/ && mkdir build && cd build && cmake .. && make 
 
