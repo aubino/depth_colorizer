@@ -135,6 +135,7 @@ source /home/$user_name/.bashrc
 sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 sudo rosdep init
 rosdep update
+sudo apt-get install python3-catkin-tools
 echo ""
 echo "#######################################################################################################################"
 echo ">>> {Step 7: Testing ROS installation, checking ROS version.}"
