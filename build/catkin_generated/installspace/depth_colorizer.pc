@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: depth_colorizer
-Description: Description of depth_colorizer
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lobject_identificator
-Requires: cv_bridge pcl_ros roscpp sensor_msgs std_msgs tf2 tf2_ros
