@@ -1,0 +1,42 @@
+name: Build && Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name : Update And Upgrade
+      run  : sudo apt update && sudo apt upgrade
+    - name : Install Eigen3
+      run : sudo apt install libeigen3-dev
+    - name : Install Opencv4
+      run : sudo apt install libopencv-dev
+    - name : Install Boost 
+      run : sudo apt-get install libboost-all-dev
+    - name : Install CMake 
+      run : sudo apt install cmake
+    - uses: ros-tooling/setup-ros@v0.6
+      with:
+        required-ros-distributions: noetic
+    - name : Install PCL
+      run :  sudo apt install libpcl-dev
+    - uses: actions/checkout@v3
+      with:
+        path : 'depth_colorizer'
+    - name : Install Rosdeps 
+      run : chmod+x ${GITHUB_WORKSPACE}/depth_colorizer/install_rosdeps.sh && ./${GITHUB_WORKSPACE}/depth_colorizer/install_rosdeps.sh
+    - name : Build 
+      run : cd ${GITHUB_WORKSPACE}/depth_colorizer/ && mkdir build && cd build && cmake .. && make 
+
+    # - uses: ros-tooling/action-ros-ci@v0.3
+      # with:
+        # package-name: depth_colorizer
+        # target-ros1-distro: noetic
+        # skip-tests: true
