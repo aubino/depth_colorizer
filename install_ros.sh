@@ -140,7 +140,7 @@ sudo rosdep init
 rosdep update
 sudo apt-get install ros-noetic-catkin
 sudo apt-get install python3-catkin-tools
-source /opt/ros/noetic/setup.bash
+#source /opt/ros/noetic/setup.bash
 echo ""
 echo "#######################################################################################################################"
 echo ">>> {Step 7: Testing ROS installation, checking ROS version.}"
