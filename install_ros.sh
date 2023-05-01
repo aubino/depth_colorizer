@@ -135,7 +135,7 @@ echo ""
 # source /opt/ros/noetic/setup.bash
 
 sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
-sudo apt-get install cmake python-catkin-pkg python-empy python-nose python-setuptools libgtest-dev build-essential
+sudo apt-get install cmake python3-catkin-pkg python3-empy python3-nose python3-setuptools libgtest-dev build-essential
 sudo rosdep init
 rosdep update
 sudo apt-get install ros-noetic-catkin
