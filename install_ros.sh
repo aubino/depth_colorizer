@@ -141,7 +141,7 @@ rosdep update
 sudo apt-get install ros-noetic-catkin
 sudo apt-get install python3-catkin-tools
 sudo apt-get install tree
-tree /
+ls / | grep "noetic"
 #source /opt/ros/noetic/setup.bash
 echo ""
 echo "#######################################################################################################################"
