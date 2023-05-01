@@ -1,1 +1,0 @@
-/home/aubin/depth_colorizer/devel/.private/catkin_tools_prebuild/setup.zsh
