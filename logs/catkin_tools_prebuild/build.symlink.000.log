@@ -1,0 +1,12 @@
+Symlinking /home/aubin/depth_colorizer/devel/./local_setup.sh
+Symlinking /home/aubin/depth_colorizer/devel/./_setup_util.py
+Symlinking /home/aubin/depth_colorizer/devel/./env.sh
+Symlinking /home/aubin/depth_colorizer/devel/./setup.zsh
+Symlinking /home/aubin/depth_colorizer/devel/./setup.sh
+Symlinking /home/aubin/depth_colorizer/devel/./local_setup.zsh
+Symlinking /home/aubin/depth_colorizer/devel/./local_setup.bash
+Symlinking /home/aubin/depth_colorizer/devel/./setup.bash
+Symlinking /home/aubin/depth_colorizer/devel/./cmake.lock
+Symlinking /home/aubin/depth_colorizer/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/aubin/depth_colorizer/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /home/aubin/depth_colorizer/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
