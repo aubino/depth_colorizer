@@ -14,21 +14,21 @@ jobs:
     steps:
     - name : Update And Upgrade
       run  : sudo apt update && sudo apt upgrade
-    - name : Install Eigen3
-      run : sudo apt install libeigen3-dev
-    - name : Install Opencv4
-      run : sudo apt install libopencv-dev
-    - name : Install Boost 
-      run : sudo apt-get install libboost-all-dev
-    - name : Install CMake 
-      run : sudo apt install cmake
+    # - name : Install Eigen3
+      # run : sudo apt install libeigen3-dev
+    # - name : Install Opencv4
+      # run : sudo apt install libopencv-dev
+    # - name : Install Boost 
+      # run : sudo apt-get install libboost-all-dev
+    # - name : Install CMake 
+      # run : sudo apt install cmake
     - uses: actions/checkout@v3
       with:
         path : 'depth_colorizer'
     - name : Install ROS
-      run : chmod +x ${GITHUB_WORKSPACE}/depth_colorizer/install_ros.sh && ./${GITHUB_WORKSPACE}/depth_colorizer/install_ros.sh && sudo apt update && sudo apt upgrade
+      run : cd ${GITHUB_WORKSPACE}/depth_colorizer/ && chmod +x install_ros.sh && ./install_ros.sh && sudo apt update && sudo apt upgrade
     - name : Install Rosdeps 
-      run : chmod+x ${GITHUB_WORKSPACE}/depth_colorizer/install_rosdeps.sh && ./${GITHUB_WORKSPACE}/depth_colorizer/install_rosdeps.sh && sudo apt update && sudo apt upgrade
+      run :  cd ${GITHUB_WORKSPACE}/depth_colorizer/ chmod+x  install_rosdeps.sh && ./install_rosdeps.sh && sudo apt update && sudo apt upgrade
     - name : Build 
       run : cd ${GITHUB_WORKSPACE}/depth_colorizer/ && mkdir build && cd build && cmake .. && make 
 
